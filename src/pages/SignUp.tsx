@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import img from "../assets/google-logo-icon-sign-in.svg"
 import img2 from "../assets/hero.svg"
+import { NavLink } from 'react-router-dom'
 
 const SignUp = () => {
   return (
@@ -18,7 +19,7 @@ const SignUp = () => {
                     <Card>
                 <Sign>
                     <Texts>Create Postman Account</Texts>
-                    <Create><I>Sign In</I> <P>instead?</P></Create>
+                    <Create><I to="/signin">Sign In</I> <P>instead?</P></Create>
                 </Sign>
                     <Text2>Email</Text2>
                     <Input type='text'/>
@@ -252,8 +253,9 @@ margin-left: 3px;
 font-weight: 400;
 `
 
-const I = styled.div`
+const I = styled(NavLink)`
 color: blue;
+text-decoration: none;
 
 :hover{
     cursor: pointer;
